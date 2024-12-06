@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Cauchemar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ALERTE ! Cauchemar imminent !</h1>
+    <div class="warning">Ne quittez pas cette page... il est trop tard...</div>
+    <audio id="backgroundNoise" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas la balise audio.
+    </audio>
+    <script>
+        // Effet sonore désagréable en boucle
+        var audio = document.getElementById("backgroundNoise");
+        audio.volume = 0.5;
+
+        // Secousse continue de l'écran
+        document.body.style.animation = "shake 0.1s infinite alternate";
+
+        // Rendre l'expérience encore plus perturbante
+        setInterval(function() {
+            document.body.style.backgroundColor = "red";
+            setTimeout(function() {
+                document.body.style.backgroundColor = "black";
+            }, 200);
+        }, 500);
+
+        // Avertir les utilisateurs
+        alert("C'est trop tard... vous êtes coincé !");
+    </script>
+</body>
+</html>

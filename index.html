@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur ma page moche</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div id="header">
+        coșmar <span class="clignote">⚠️</span>
+    </div>
+    <marquee behavior="scroll" direction="left" scrollamount="30">
+        <span class="defilant">Can you handle what's coming? !</span> 
+    </marquee>
+
+    <!-- Barre de recherche -->
+    <div>
+        <input type="search" id="searchBar" placeholder="Do you think you can do your search?..." aria-label="Barre de recherche" oninput="searchRedirect()" >
+        
+    </div>
+    <img src= "https://www.shutterstock.com/shutterstock/photos/1710438799/display_1500/stock-vector-video-streaming-design-template-vector-illustration-1710438799.jpg" alt="Description de l'image"  onclick="goToPage()">
+    <br>
+    <button onclick="generateWarnings()">Click here to Download</button><br><br>
+    <button onclick="redirectToVideoPage()">Click here to Watch the Video</button>
+
+    <!-- Conteneur pour afficher des images "warning" -->
+    <div id="warningContainer"></div>
+
+    <script>
+        function generateWarnings() {
+            const container = document.getElementById("warningContainer");
+
+            // Afficher le conteneur plein écran
+            container.style.display = "block";
+
+            // Supprimer toutes les images existantes
+            container.innerHTML = "";
+
+            // Générer plusieurs images aléatoires dans le conteneur
+            for (let i = 0; i < 1000; i++) { // Modifier le nombre d'images si nécessaire
+                const img = document.createElement("img");
+                img.src = "https://th.bing.com/th/id/R.0dbd406161719dedfb9565f777522c25?rik=1NMTGwY8PFM6FQ&riu=http%3a%2f%2fimage.shutterstock.com%2fz%2fstock-photo-warning-sign-isolated-on-white-78859183.jpg&ehk=Y82Ho0j3nfUi97bQ4oYOKXFyWAfUghr7QMGNP4eLpwk%3d&risl=&pid=ImgRaw&r=0"; // Assurez-vous que "OIP.jpg" est dans le même dossier
+                img.alt = "Warning";
+                img.className = "warning-image";
+
+                // Position aléatoire pour chaque image
+                img.style.top = Math.random() * 100 + "vh"; // Position verticale aléatoire
+                img.style.left = Math.random() * 100 + "vw"; // Position horizontale aléatoire
+
+                container.appendChild(img);
+            }
+        }
+
+        // Fonction pour rediriger vers une page basée sur la valeur de la recherche
+        function searchRedirect() {
+            const searchQuery = document.getElementById("searchBar").value;
+
+            // Si la barre de recherche n'est pas vide, redirige vers une autre page (par exemple, Google)
+            if (searchQuery) {
+                window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
+            }
+        }
+        function redirectToVideoPage() {
+            window.location.href = "videoPage.html"; // Changez "videoPage.html" par le lien vers la page contenant la vidéo
+        }
+        function goToPage() {
+            window.location.href = "index3.html"; // Redirection vers index3.html
+        }
+    </script>
+</body>
+</html>

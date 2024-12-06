@@ -1,0 +1,153 @@
+/* Styles pour le tableau */
+
+
+
+
+
+body {
+    /* Ajouter une image de fond à la page entière */
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('https://sixactualites.fr/wp-content/uploads/2019/04/Cauchemar.jpg'); /* Chemin de l'image */
+    background-size: cover; /* Redimensionner l'image pour couvrir tout l'écran */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Éviter la répétition */
+    background-attachment: fixed; /* Fixer l'image lors du défilement */
+
+
+}
+
+/* Styles généraux */
+
+
+/* En-tête */
+#header {
+    
+    color: #ff00008e; 
+    font-size: 50px; /* Texte énorme */
+    text-align: center;
+    text-shadow: 20px 10px 15px #FF0000; /* Ombres inutiles et agressives */
+}
+
+/* Texte qui clignote */
+.clignote {
+    animation: clignotement 0.2s infinite;
+}
+
+/* Animation de clignotement */
+@keyframes clignotement {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Texte défilant */
+.defilant {
+    color: #FF0000;
+    font-size: 40px;
+}
+
+/* Tableau */
+
+
+
+
+
+
+/* Suppression de l'effet de soulignement */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Conteneur des images warning */
+#warningContainer {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre transparent */
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Images Warning */
+.warning-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: float 5s infinite ease-in-out;
+}
+
+/* Animation pour des images flottantes */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Style pour les taches de couleur autour du texte */
+#searchBar {
+    display: block;
+    margin: 20px auto; /* Center horizontally with some space around */
+    padding: 8px 16px;
+    font-size: 16px;
+    width: 80%; /* Responsive width */
+    max-width: 400px; /* Max width of the search bar */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for buttons */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Space between buttons */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #CC0000;
+}
+
+#header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+marquee {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+img{
+    display: block;
+    border: 2px solid #000;
+    border-radius: 10px;
+    width: 30%; /* Ajuste la taille à 50% de la largeur de la page */
+
+}
